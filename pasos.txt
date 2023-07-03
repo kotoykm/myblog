@@ -1,0 +1,21 @@
+ETAPA 1
+1. Crear proyecto
+2. Instalar devise con budle add devise
+3. Instalar devise en proyecto con rails g devise:install
+4. Usar  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } en config/environments/development.rb
+5. Crear la ruta en homes#index, crear su respectivo controlador para que funcione
+6. Pegar lo siguiente en el layout  
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+7. Usar 'rails g devise "model"' para crear un modelo que use devise hehe
+8. migrar con rails db:migrate para hacer efectivos los cambios y revisar las rutas
+
+9. Instalar Bootstrap y registrarse usando la url de http://localhost:3000/users/sign_up
+    9. Si si quiere usar bootstrap de manera local, debe revisarse la documentación de Render para Rails
+
+10. Comfigurar el "config.sign_out_via = :delete" por ":get" en config/initalizers/devise.rb en la linea 269. Esto para que funcione como enlace y no como botón
+11. Generar un navbar con sus respectivos enlaces para iniciar sesión, salir y crear un nuevo usuario.
+12. Generar una carpeta /componentes en /views y crear un componente reutilizable llamado _barra.html.erb
+    12. Cortar todo el codigo del navbar del layout y ponerlo en el componente creado, renderizarlo cuando queramos con <%= render "componentes/barra" %>
+
+ETAPA 2
