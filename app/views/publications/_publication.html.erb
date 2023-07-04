@@ -1,7 +1,6 @@
 <div id="<%= dom_id publication %>">
   <p>
-    <strong>Image:</strong>
-    <%= publication.image %>
+    <%= image_tag publication.image, size:500 %>
   </p>
 
   <p>
@@ -16,7 +15,7 @@
 
   <p>
     <strong>User:</strong>
-    <%= publication.user_id %>
+    <%= publication.user.email %>
   </p>
 
 </div>

@@ -34,3 +34,22 @@ ETAPA 3
 15. Usar rails g scaffold publication image title description:text user:references
     15.1 :text es para TEXTOS GRANDES
     15.2 Al crear scaffolds evitar usar referencias, es mucho trabajo
+
+16. Se puede poner el current_user en el formulario para publicar un post
+     <%= form.text_field :user_id, value: current_user.id %> También funciona con form.hidden_field
+     16.1 Se puede poner @publication.user_id = current_user.id en el controlador de publicaciones para un auto reconocimiento
+17. Hacer uso de before_action :authenticate_user! en el controlador de publicaciones para no permitir publicaciones sin usuario
+18. Editar a gusto el mostrar de publicaciones _publication.html.erb y hacer nuestra publicacion
+
+19. Modificar el current del controlador con una excepcion de esta manera
+    before_action :authenticate_user!, except: [:index, :show]
+20. Crear un nuevo usuario y hacer un post con el
+
+21. Editar los permisos en el show de las publicaciones, para que solo el dueño de la publicacion tenga permisos de edicion
+    <%if user_signed_in?%>
+        <%if current_user.id == @publication.user_id%>
+        <%= link_to "Edit this publication", edit_publication_path(@publication) %> |
+        <%= button_to "Destroy this publication", @publication, method: :delete %>
+        <%end%>
+    <%end%>
+22. 
