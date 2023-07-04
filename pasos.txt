@@ -28,4 +28,9 @@ ETAPA 2
     <%end%>
 
 FALTA CURRENT USER
-14.
+14. <span class="text-white nav-link fst-italic"><%= current_user.email %></span>
+
+ETAPA 3
+15. Usar rails g scaffold publication image title description:text user:references
+    15.1 :text es para TEXTOS GRANDES
+    15.2 Al crear scaffolds evitar usar referencias, es mucho trabajo
