@@ -52,4 +52,11 @@ ETAPA 3
         <%= button_to "Destroy this publication", @publication, method: :delete %>
         <%end%>
     <%end%>
-22. 
+
+22. Añadir un redireccionamiento a las publicaciones desde el inicio de sesión
+    get '/publications', to: 'publications#index', as: 'user_root'
+
+23. Por seguridad agregar esto en el application_controller
+        def after_sign_in_path_path_for(resource)
+            publications_path
+        end
