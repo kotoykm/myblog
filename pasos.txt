@@ -19,3 +19,13 @@ ETAPA 1
     12. Cortar todo el codigo del navbar del layout y ponerlo en el componente creado, renderizarlo cuando queramos con <%= render "componentes/barra" %>
 
 ETAPA 2
+13. Usar este codigo en la vista layout. Preguntará con user_signed_in? si el usuario tiene una sesión activa y pondrá html en consecuencia
+    <% if user_signed_in? %>
+        <%= link_to "Salir", destroy_user_session_path, class: "nav-link" %>
+    <%else%>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <%= link_to "Registrarse", new_user_registration_path, class: "nav-link" %>
+    <%end%>
+
+FALTA CURRENT USER
+14.

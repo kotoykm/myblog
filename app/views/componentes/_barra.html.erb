@@ -1,15 +1,43 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid mx-5 py-3">
+                <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 27.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 250 250" style="enable-background:new 0 0 250 250;" xml:space="preserve" width="75" height="75" class="navbar-brand">
+        <style type="text/css">
+            .st0{fill:#FFE043;}
+        </style>
+        <g>
+            <circle class="st0" cx="125" cy="125" r="107.4"/>
+        </g>
+        <ellipse cx="79.7" cy="90.09" rx="14.64" ry="18.55"/>
+        <ellipse cx="166.85" cy="90.43" rx="14.64" ry="18.55"/>
+        <g>
+            <path d="M54.09,143.86c6.41,13.66,16.1,25.1,28.02,33c11.86,7.94,25.84,12.28,39.89,12.36c14.04,0.13,28.08-3.94,40.09-11.66
+                c12.06-7.68,21.94-18.96,28.59-32.5c-3.08,14.82-12.04,28.68-24.5,38.27c-6.21,4.83-13.29,8.6-20.81,11.14l-2.85,0.87
+                c-0.96,0.26-1.89,0.62-2.87,0.79c-1.95,0.39-3.88,0.9-5.84,1.19c-1.97,0.23-3.94,0.55-5.93,0.68c-1.99,0.07-3.98,0.23-5.97,0.21
+                c-1.99-0.1-3.98-0.14-5.96-0.31c-1.97-0.26-3.96-0.46-5.92-0.79c-1.94-0.43-3.89-0.82-5.82-1.29c-1.9-0.58-3.81-1.12-5.69-1.77
+                c-7.47-2.67-14.47-6.59-20.6-11.52C65.66,172.72,56.93,158.73,54.09,143.86z"/>
+        </g>
+        <g>
+            <path d="M181.49,131.79c3.62,4.75,6.79,8.28,11.93,10.74c4.13,1.9,7.65,2.41,12.58,2.88c-4.04,5.03-11.99,5.65-17.41,2.49
+                C183.05,144.92,179.42,137.88,181.49,131.79L181.49,131.79z"/>
+        </g>
+        <g>
+            <path d="M61.32,131.79c2.07,6.09-1.56,13.14-7.1,16.11c-5.43,3.16-13.38,2.55-17.41-2.49c5.18-0.5,8.98-1.05,13.3-3.25
+                C54.92,139.69,57.84,136.31,61.32,131.79L61.32,131.79z"/>
+        </g>
+        </svg>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <%= link_to "Inicio", root_path, class: "nav-link" %>
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <%= link_to "Registrarse", new_user_registration_path, class: "nav-link" %>
-          <%= link_to "Salir", destroy_user_session_path, class: "nav-link" %>
+        <div class="navbar-nav ms-3 fs-5">
+          <%= link_to "Inicio", root_path, class: "nav-link text-white fw-bold" %>
+            <% if user_signed_in? %>
+                <span class="text-white nav-link fst-italic"><%= current_user.email %></span>
+                <%= link_to "Salir", destroy_user_session_path, class: "nav-link text-white fw-bold" %>
+            <%else%>
+                <%= link_to "Entrar", new_user_session_path, class: "nav-link text-white fw-bold" %>
+                <%= link_to "Registrarse", new_user_registration_path, class: "nav-link text-white fw-bold" %>
+            <%end%>
         </div>
       </div>
     </div>
