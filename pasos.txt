@@ -62,3 +62,15 @@ ETAPA 3
             publications_path
         end
 
+-----------------------------------------
+??. Nueva tabla???
+
+24. generar las vistas de los formularios de devise con rails g devise:views
+    24. A partir de ahora todos los archivos necesarios estarán en las vistas /views/sessions
+25. Editamos el new.html.erb de la carpeta anterior
+    25. De utilidad  para estilizar formularios: https://getbootstrap.com/docs/5.3/forms/layout/
+
+26. rails g migration AddDetailsToUsers phone name age:integer
+    26.1. Comprobar la migración con User.all() en la consola de rails
+
+27. rails g scaffold comment content user:references publication:references
