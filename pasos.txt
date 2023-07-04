@@ -74,3 +74,7 @@ ETAPA 3
     26.1. Comprobar la migración con User.all() en la consola de rails
 
 27. rails g scaffold comment content user:references publication:references
+28. Editar las vistas de registro y de edición
+
+29. rails g devise:controllers users
+    29. Configurar las rutas en el archivo que admita los controladores

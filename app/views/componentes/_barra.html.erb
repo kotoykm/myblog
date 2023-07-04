@@ -32,7 +32,7 @@
         <div class="navbar-nav ms-3 fs-5">
           <%= link_to "Inicio", root_path, class: "nav-link text-white fw-bold" %>
             <% if user_signed_in? %>
-                <span class="text-white nav-link fst-italic"><%= current_user.email %></span>
+                <%= link_to current_user.name, edit_user_registration_path, class: "text-white nav-link fst-italic" %>
                 <%= link_to "Publicaciones", publications_path, class: "nav-link text-white fw-bold" %>
                 <%= link_to "Salir", destroy_user_session_path, class: "nav-link text-white fw-bold" %>
             <%else%>
