@@ -3,3 +3,7 @@ Resulta que creo que no vamos a usar gmail...
 1. Vamos a usar mailtrap: https://mailtrap.io/
 2. Irse a los settings de email testing
 3. Seleccionar rails y seguir instrucciones
+
+4. Definir variables de entorno en este paso, revisar los commits
+
+5. Mas cosas de test a los que nadie le importan
