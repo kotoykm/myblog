@@ -63,7 +63,7 @@ ETAPA 3
         end
 
 -----------------------------------------
-??. Nueva tabla???
+
 
 24. generar las vistas de los formularios de devise con rails g devise:views
     24. A partir de ahora todos los archivos necesarios estarán en las vistas /views/sessions
@@ -78,3 +78,8 @@ ETAPA 3
 
 29. rails g devise:controllers users
     29. Configurar las rutas en el archivo que admita los controladores
+
+30. Nueva tabla. Esta vez relacionada correctamente.
+
+31. A partir de cierto punto los pasos fueron repetidos al pie de la letra hasta la pagina 18 de la presentación 1 del dia 2 (3)
+    31. Revisar también el archivo dejado por el profesor y hacer los cambios correspondientes

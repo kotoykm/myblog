@@ -22,27 +22,31 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "New password confirm" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+
+  <div class="field mt-5">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="field">
     <%= f.label :name %> <br>
-    <%= f.text_field :name, autocomplete: "new-name" %>
-    </div>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %> <!--Ni idea de que haga el autofocus-->
+  </div>
+
     <div class="field">
     <%= f.label :phone %> <br>
-    <%= f.text_field :phone, autocomplete: "new-phone" %>
-    </div>
+    <%= f.text_field :phone, autofocus: true, autocomplete: "phone" %>
+  </div>
+
     <div class="field">
     <%= f.label :age %> <br>
-    <%= f.text_field :age, autocomplete: "new-age" %>
-    </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>

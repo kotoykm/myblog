@@ -1,21 +1,21 @@
 <div id="<%= dom_id publication %>">
-  <p>
-    <%= image_tag publication.image, size:500 %>
-  </p>
 
-  <p>
-    <strong>Title:</strong>
+
+  <p class="fw-bold display-3">
     <%= publication.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <%= image_tag publication.image, class: "col-4" %>
+  </p>
+
+  <p>
     <%= publication.description %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= publication.user.email %>
+    <strong>Por:</strong>
+    <%= publication.user.name %>
   </p>
 
 </div>
