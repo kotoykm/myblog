@@ -3,6 +3,14 @@ class PublicationsController < ApplicationController
   #before_action :authenticate_user!, except: [:index, :show] #Comprueba que el usuario esté autenticado
   before_action :authenticate_user!
 
+  before_action only: [:new, :create] do #Restriccion 1
+    authorize_request(["author", "admin"])
+  end
+
+  before_action only: [:edit, :update, :destroy] do #Restriccion 2
+    authorize_request(["admin"])
+  end
+
   # GET /publications or /publications.json
   def index
     @publications = Publication.all

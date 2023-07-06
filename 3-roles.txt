@@ -1,0 +1,26 @@
+1. Añadimos un nuevo campo a la tabla hehe: rails g migration AddRoleToUsers role:integer
+    1.1 Migramos esto
+    1.2 Comprobamos con User.pluck :role
+2. Convertimos los roles numericos generados a palabras!!
+    2.1 enum :role, [:normal_user, :author, :admin]
+3. Comprobacion de rol en ApplicationController.rb como restriccion maestra
+    def authorize_request(kind = nil)
+        unless kind.include?(current_user.role)
+            redirect_to posts_path, notice: "You are not authorized to perform this action"
+        end
+    end
+
+4. Solo los autores y administradores pueden crear posts en publicationcontroller.rb
+    before_action only: [:new, :create] do
+        authorize_request(["author", "admin"])
+    end
+5. Solo los admins pueden tocar los posts en publicationcontroller.rb
+    before_action only: [:edit, :update, :destroy] do
+        authorize_request(["admin"])
+    end
+5.1 Esto de los roles se puede usar de muchas formas, se puede poner de condicion de if en las vistas y se puede poner de condicion en los controladores para renderear uno y otro layout completamente
+
+6. Cambiar con un update en pgadmin el rol de un usuario para comprobar la efectividad
+    UPDATE public.users
+        SET role=2
+        WHERE id=3;
